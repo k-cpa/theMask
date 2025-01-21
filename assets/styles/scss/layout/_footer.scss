@@ -1,0 +1,63 @@
+@use '../abstract/mixin';
+@use '../abstract/variable' as var;
+
+footer {
+    @include mixin.flex($justify: space-between);
+    background-color: var.$text-color;
+    color: var.$nav-text-color;
+
+
+    .logo_wrapper {
+        width: 5%;
+        padding-left: 10%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .links {
+        @include mixin.flex($direction:column);
+        margin-top: 1rem;
+        padding-right: 10%;
+
+        .follow {
+            @include mixin.flex($direction:column);
+
+            .favicons_links {
+                margin-top: -.5rem;
+                @include mixin.flex;
+                gap: 1rem;
+
+                .favicon {
+                    margin-top: 1rem;
+                    width: 30px;
+                    height: 30px;
+                    transition: .3s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+
+        .contactUs {
+            @include mixin.flex($direction:column);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+
+            a {
+                color: var.$nav-text-color;
+                transition: .3s ease;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+}

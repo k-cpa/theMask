@@ -2,16 +2,62 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Mempo Legacy{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+     {% block header %}
+                <header>
+                    <nav>
+                        <div class="logo_wrapper">
+                            <a href="{{path('app_main')}}">
+                                <img src="{{asset('img/logo.png')}}" alt="Logo du site Mempo Legacy">
+                            </a>
+                        </div>
+                        <ul>
+                            <li><a href="{{path('app_main')}}">Accueil</a></li>
+                            <li><a href="{{path('app_gallery')}}">Gallerie</a></li>
+                            <li><a href="">Contact</a></li>
+                            {# Rajouter le li>a pour contact une fois que je m'occupe du form  #}
+                        </ul>
+                        {# Définir les path quand on s'occupe des users  #}
+                        <div class="connect_links">
+                            <a href="">Connexion</a> 
+                            <a href="">Inscription</a>
+                        </div>
+                    </nav>
+                </header>
+            {% endblock %}
+        {% block body %}
+        {% endblock %}
+        {% block footer %}
+        <footer>
+            <div class="logo_wrapper">
+                <img src="{{asset('img/logo.png')}}" alt="Logo de la société The mempo Legacy">
+            </div>
+            <div class="links">
+                <div class="follow">
+                    <h4>Nous suivre</h4>
+                    <div class="favicons_links">
+                        <i class="favicon fa-brands fa-square-instagram"></i>
+                        <i class="favicon fa-brands fa-square-facebook"></i>
+                    </div>
+                </div>
+                <div class="contactUs">
+                    <h4>Nous contacter</h4>
+                    <a href="mailto:contact@bmempolegacy.com">contact@bmempolegacy.com</a>
+                    <a href="tel:0505050505">0505050505</a>
+                </div>
+            </div>
+        </footer>
+        {% endblock %}
     </body>
 </html>

@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+    <section id="heroBanner">
+        <div class="title_banner">
+            <h1>The Mempo <span>Legacy</span></h1>
+            <P>Masques d'héritage, <span>Chaque trait raconte un temps,</span><span>Tradition vivante.</span></p>
+        </div>
+    </section>
+    <section id="newAdd">
+        <div class="newAdd_title">
+            <h3>Les derniers ajouts</h3>
+        </div>
+        <article class="newAdd_maskContainer">
+
+        {# REMPLACER PAR LES ELEMENTS DE LA DATABASE UNE FOIS QUE TOUT EST SETUP #}
+            <div class="newAdd_maskCard">
+                <div class="img_wrapper">
+                    <img src="{{asset('img/logo.png')}}" alt="">
+                </div>
+                <div class="content_maskCard">
+                    <h4>title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit arcu lectus, ut aliquet risus tempor at. Suspendisse potenti. Phasellus.</p>
+                </div>
+                {# absolute link position #}
+                <div class="more">
+                    <a href="">En savoir +</a>
+                </div>
+            </div>
+            <div class="newAdd_maskCard">
+                <div class="img_wrapper">
+                    <img src="{{asset('img/logo.png')}}" alt="">
+                </div>
+                <div class="content_maskCard">
+                    <h4>title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit arcu lectus, ut aliquet risus tempor at. Suspendisse potenti. Phasellus.</p>
+                </div>
+                {# absolute link position #}
+                <div class="more">
+                    <a href="">En savoir +</a>
+                </div>
+            </div>
+            <div class="newAdd_maskCard">
+                <div class="img_wrapper">
+                    <img src="{{asset('img/logo.png')}}" alt="">
+                </div>
+                <div class="content_maskCard">
+                    <h4>title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit arcu lectus, ut aliquet risus tempor at. Suspendisse potenti. Phasellus.</p>
+                </div>
+                {# absolute link position #}
+                <div class="more">
+                    <a href="">En savoir +</a>
+                </div>
+            </div>
+            <div class="newAdd_maskCard">
+                <div class="img_wrapper">
+                    <img src="{{asset('img/mask_1.png')}}" alt="">
+                </div>
+                <div class="content_maskCard">
+                    <h4>title</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit arcu lectus, ut aliquet risus tempor at. Suspendisse potenti. Phasellus.</p>
+                </div>
+                {# absolute link position #}
+                <div class="more">
+                    <a href="">En savoir +</a>
+                </div>
+            </div>
+
+            {##############################################################################}
+        </article>
+    </section>
+{% endblock %}

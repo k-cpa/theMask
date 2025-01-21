@@ -1,0 +1,13 @@
+@use '../abstract/variable' as var;
+@use '../abstract/mixin';
+
+
+h1 {
+    font-size: 4em;
+}
+
+body {
+    background-color: #0F0F11;
+    color: var.$text-color;
+    font-family: 'sawa';
+}
