@@ -1,11 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Gallerie{% endblock %}
+{% block title %}Galerie{% endblock %}
 
 {% block body %}
     <main class='gallery main'>
         {% if is_granted('ROLE_USER') %}
             <li><a href="{{ path('app_add_mask') }}">Ajouter un masque</a></li>
         {% endif %}
+        <article class="MaskContainer">
+            {% for mask in masks %}
+                <div class="newAdd_maskCard">
+                    <div class="img_wrapper">
+                        <img src="{{asset('uploads/images/' ~ mask.imageName)}}" alt="">
+                    </div>
+                    <div class="content_maskCard">
+                        <h4>{{ mask.name }}</h4>
+                        <p>{{ mask.story | slice(0, 250) ~ '...' }}</p>
+                    </div>
+                    <div class="more">
+                    {# Définir le path 'id': mask.id #}
+                        <a href="">En savoir +</a>
+                    </div>
+                    <form method="POST" onsubmit="return confirm('Confirmer la suppression ?')" action="{{ path('app_delete', {'id': mask.id}) }}" method="POST">
+                        <input type="hidden" name="_method" value="delete"> {#Cette ligne est pour eviter les conflits --> creuser pourquoi quand meme #}
+                        <input type="hidden" name="_token" value=" {{ csrf_token('SUP' ~ mask.id) }}"> 
+                        <input id="delete" type="submit" value="Supprimer">
+                    </form>
+                </div>
+            {% endfor %}
+        </article>
     </main>
 {% endblock %}
