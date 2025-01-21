@@ -34,12 +34,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     /**
-     * @var Collection<int, Masks>
-     */
-    #[ORM\OneToMany(targetEntity: Masks::class, mappedBy: 'user', orphanRemoval: true)]
-    private Collection $masks;
-
-    /**
      * @var Collection<int, Comments>
      */
     #[ORM\OneToMany(targetEntity: Comments::class, mappedBy: 'user', orphanRemoval: true)]
@@ -50,7 +44,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __construct()
     {
-        $this->masks = new ArrayCollection();
         $this->comments = new ArrayCollection();
     }
 
@@ -127,36 +120,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    /**
-     * @return Collection<int, Masks>
-     */
-    public function getMasks(): Collection
-    {
-        return $this->masks;
-    }
-
-    public function addMask(Masks $mask): static
-    {
-        if (!$this->masks->contains($mask)) {
-            $this->masks->add($mask);
-            $mask->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMask(Masks $mask): static
-    {
-        if ($this->masks->removeElement($mask)) {
-            // set the owning side to null (unless already changed)
-            if ($mask->getUser() === $this) {
-                $mask->setUser(null);
-            }
-        }
-
-        return $this;
     }
 
     /**

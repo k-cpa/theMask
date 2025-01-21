@@ -37,7 +37,6 @@ class Masks
     private ?string $price = null;
 
     #[ORM\ManyToOne(inversedBy: 'masks')]
-    #[ORM\JoinColumn(nullable: true)]
     private ?User $user = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)] // Pour avoir la date automatiquement à la création d'un masque

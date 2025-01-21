@@ -43,7 +43,7 @@ final class AddMaskController extends AbstractController
              $this->addFlash('success', 'Votre masque a été ajouté !');
  
              // Redirection
-             return $this->redirectToRoute('app_home');
+             return $this->redirectToRoute('app_main');
          }
 
         return $this->render('pages/addMask.html.twig', [
