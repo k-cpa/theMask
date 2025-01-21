@@ -26,12 +26,22 @@
                             <li><a href="{{path('app_main')}}">Accueil</a></li>
                             <li><a href="{{path('app_gallery')}}">Gallerie</a></li>
                             <li><a href="">Contact</a></li>
-                            {# Rajouter le li>a pour contact une fois que je m'occupe du form  #}
                         </ul>
+
                         {# Définir les path quand on s'occupe des users  #}
                         <div class="connect_links">
-                            <a href="">Connexion</a> 
-                            <a href="">Inscription</a>
+                        {# Affichage pour admin panel #}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a href="">Panel administrateur</a>
+                        {% endif %}
+
+                        {# Gestion deconnexion quand user est login #}
+                        {% if is_granted('ROLE_USER') %}
+                            <a href="{{ path('app_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}">Connexion</a> 
+                            <a href="{{ path('app_signin') }}">Inscription</a>
+                        {% endif %}
                         </div>
                     </nav>
                 </header>

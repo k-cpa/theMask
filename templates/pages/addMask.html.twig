@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddMaskController!{% endblock %}
+
+{% block body %}
+
+    <main class='main_addMask'>
+
+        <div class="title_addMask">
+            <h2>Ajouter un masque</h2>
+        </div>
+        <article class="form_container">
+            {{form_start(formAddMask)}}
+                {{ form_row(formAddMask.name, {
+                    'label': 'Nom du masque',
+                    'label_attr': {'class': 'form_label'},
+                    'attr': {'placeholder': 'Entrez le nom du masque', 'class': 'form_input'}
+                }) }}
+                {{ form_row(formAddMask.story, {
+                    'label': 'Légende du masque',
+                    'label_attr': {'class': 'form-label'},
+                    'attr': {'placeholder': 'Entrez le contenu', 'class': 'label_input'}
+                }) }}
+                {{ form_row(formAddMask.price, {
+                    'label': 'Prix'
+                    'label_attr': {'class': 'form-label'},
+                }) }}
+                <button>Ajouter</button>
+            {{form_end(formAddMask)}}
+        </article>
+
+        
+
+    </main>
+
+{% endblock %}

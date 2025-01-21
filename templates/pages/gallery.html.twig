@@ -3,5 +3,7 @@
 {% block title %}Gallerie{% endblock %}
 
 {% block body %}
-
+              {% if is_granted('ROLE_USER') %}
+                    <li><a href="{{ path('app_add_mask') }}">Ajouter un masque</a></li>
+                {% endif %}
 {% endblock %}
