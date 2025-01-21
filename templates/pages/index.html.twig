@@ -15,19 +15,23 @@
         </div>
         <article class="newAdd_maskContainer">
 
+
+
         {# REMPLACER PAR LES ELEMENTS DE LA DATABASE UNE FOIS QUE TOUT EST SETUP #}
             <div class="newAdd_maskCard">
+            {% for mask in latestMasks %}
                 <div class="img_wrapper">
-                    <img src="{{asset('img/logo.png')}}" alt="">
+                    <img src="{{asset(mask.image)}}" alt="">
                 </div>
                 <div class="content_maskCard">
-                    <h4>title</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit arcu lectus, ut aliquet risus tempor at. Suspendisse potenti. Phasellus.</p>
-                </div>
-                {# absolute link position #}
-                <div class="more">
-                    <a href="">En savoir +</a>
-                </div>
+                        <h4>{{ mask.name }}</h4>
+                        <p>{{ mask.story | slice(0, 100) ~ '...' }}</p>
+                    </div>
+                    <div class="more">
+                    {# Définir le path 'id': mask.id #}
+                        <a href="">En savoir +</a>
+                    </div>
+            {% endfor %}
             </div>
             <div class="newAdd_maskCard">
                 <div class="img_wrapper">

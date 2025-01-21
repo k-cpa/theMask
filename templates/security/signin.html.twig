@@ -3,5 +3,24 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-
+    <main class='form_pages'>
+        {{form_start(formSignIn)}}
+            {{ form_row(formSignIn.username, {
+                'label': 'Nom d\'utilisateur',
+                'label_attr': {'class': 'form_label'},
+                'attr': {'placeholder': 'Entrez votre pseudo', 'class': 'form_input'}
+            }) }}
+            {{ form_row(formSignIn.email, {
+                'label': 'Adresse mail',
+                'label_attr': {'class': 'form-label'},
+                'attr': {'placeholder': 'Entrez votre adresse mail', 'class': 'label_input'}
+            }) }}
+            {{ form_row(formSignIn.password, {
+                'label': 'mot de passe',
+                'label_attr': {'class': 'form-label'},
+                'attr': {'placeholder': 'Entrez votre mot de passe', 'class': 'label_input'}
+            }) }}
+            <button>Ajouter</button>
+        {{form_end(formSignIn)}}
+    </main>
 {% endblock %}

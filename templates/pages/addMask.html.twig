@@ -4,7 +4,7 @@
 
 {% block body %}
 
-    <main class='main_addMask'>
+    <main class='main_addMask main'>
 
         <div class="title_addMask">
             <h2>Ajouter un masque</h2>
@@ -22,7 +22,7 @@
                     'attr': {'placeholder': 'Entrez le contenu', 'class': 'label_input'}
                 }) }}
                 {{ form_row(formAddMask.price, {
-                    'label': 'Prix'
+                    'label': 'Prix',
                     'label_attr': {'class': 'form-label'},
                 }) }}
                 <button>Ajouter</button>

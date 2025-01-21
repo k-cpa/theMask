@@ -1,0 +1,7 @@
+@use '../abstract/mixin';
+@use '../abstract/variable' as var;
+
+.form_pages {
+    @include mixin.flex;
+    height: 100vh;
+}
