@@ -37,7 +37,7 @@ class SecurityController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('success', 'Votre profil est enregistré sur le site');
-            return $this->redirectToRoute('app_main');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('security/signin.html.twig', [

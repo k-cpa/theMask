@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Masks;
 use App\Form\AddMaskType;
+use DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,11 +29,9 @@ final class AddMaskController extends AbstractController
 
          // On vérifie si formulaire est soumis et qu'il est valide
          if ($formAddMask->isSubmitted() && $formAddMask->isValid()) {
- 
-             // Gestion relations Many to Many
-             // foreach($pizza->getIngredient() as $Ingredient) {
-             //     $Ingredient->addPizza($pizza);
-             // }
+
+            // Ajout d'une date à la création 
+            $mask->setCreatedAt(new DateTimeImmutable());
  
              // On marque les infos de l'objet article prêt a être envoyé en database
              $entityManager->persist($mask);
