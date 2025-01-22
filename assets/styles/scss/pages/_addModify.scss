@@ -1,0 +1,9 @@
+@use '../abstract/mixin';
+@use '../abstract/variable' as var;
+
+.main_addMask {
+    @include mixin.flex($direction:column);
+    gap: 3rem;
+    padding-top: 90px;
+    height: 100vh;
+}

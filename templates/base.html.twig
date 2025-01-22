@@ -32,7 +32,7 @@
                         <div class="connect_links">
                         {# Affichage pour admin panel #}
                         {% if is_granted('ROLE_ADMIN') %}
-                            <a href="">Panel administrateur</a>
+                            <a href="{{ path('admin') }}">Panel administrateur</a>
                         {% endif %}
 
                         {# Gestion deconnexion quand user est login #}
