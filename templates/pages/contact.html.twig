@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block header %}
+{% endblock %} 
+
+{% block body %}
+    {{ form_start(contactForm) }}
+        {{ form_row(contactForm.email) }}
+        {{ form_row(contactForm.message) }}
+        {{ form_row(contactForm.submit) }}
+    {{ form_end(contactForm) }}
+{% endblock %}
